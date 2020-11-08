@@ -7,3 +7,4 @@ cp -rf ./build/static/js ../backend-django/flashcards/static/js
 cd ..
 python3 build.py
 rm -r frontend-react/build
+echo "Successfully deployed to Django!"
