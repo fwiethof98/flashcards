@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container my-4">
+{% if title %}<h3 class="my-4">{{ title }}</h3>{% endif %}
+{% if subtitle %}<p>{{ subtitle }}</p>{% endif %}
+{% include "cards/create_card.html" with form=form btn_label=btn_label %}
+</div>
+{% endblock content %}

@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card-test" id="card-test" data-card-id="{% if card_id %}{{ card_id }}{% endif %}" data-lecture="{% if lecture %}{{ lecture }}{% endif %}"></div>
+
+{% endblock content %}

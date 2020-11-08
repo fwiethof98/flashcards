@@ -1,0 +1,25 @@
+- Latex rendert manchmal nicht, wenn man oben links auf das Logo klickt
+- Zeilenumbruch
+
+- Delete, Hide und Edit nur anzeigen, wenn man Maus darüber geht
+- Mathjax, Bootstrap versuchen Cookies zu setzen
+- Login auf nicht-https:// ...
+
+
+- Fehlermeldungen anzeigen (submit ohne Login z. B.)
+- Submit-Button auf kleinem Bildschirm
+
+- Platzhalter rausnehmen, um keine Verwirrung zu stiften
+- Kleines Menü füllen (für kleinen Bildschirm)
+
+- Code-Highlighting-System 
+- Delete-Bestätigung?
+    - Delete-Knopf bei Karten entfernen, die einem nicht gehören
+
+- Error-Nachrichten für alles einbauen, was irgendwie schiefgehen könnte
+- Disclaimer, dass man sich einloggen muss (sonst schreibt man doppelt)
+
+- prism.js
+- favicon aus HTML löschen
+
+- Ausgewähltes Modul bei Erstellung gleich lassen (nicht zurücksetzen)
