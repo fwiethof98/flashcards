@@ -18,11 +18,11 @@ function Card(props) {
     }
   
     const handleClickEdit = (card) => {
-      window.location.href = `http://${window.location.hostname}:8000/?edit=true&id=` + card.id
+      window.location.href = `http://${window.location.hostname}/?edit=true&id=` + card.id
     }
   
     return <div style={display ? {display: "block"} : {display: "none"}} >
-      <p className="mt-2 text-muted" style={{fontSize: 14, marginBottom: 2}}><a href={`http://${window.location.hostname}:8000/cards/${card.username}`}>@{card.username}</a>, {card.lecture}, {card.time && card.time.split("T")[0]}</p>
+      <p className="mt-2 text-muted" style={{fontSize: 14, marginBottom: 2}}><a href={`http://${window.location.hostname}/cards/${card.username}`}>@{card.username}</a>, {card.lecture}, {card.time && card.time.split("T")[0]}</p>
       <div className="form-inline">
         <button className="mx-1 btn btn-danger mb-1" onClick={() => handleClick(card.id)}>Delete</button>
         <button className="mx-1 btn btn-primary mb-1" onClick={() => handleShowAnswer(card.id)}>{displayAnswer ? "Hide" : "Show"}</button>

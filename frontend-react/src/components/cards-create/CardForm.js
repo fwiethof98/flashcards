@@ -33,11 +33,11 @@ function CardForm(props) {
       }
       createCard(newCardObj, props.edit, props.cardId, (response, status) => {
         if(status===403) {
-          window.location.href=`http://${window.location.hostname}:8000/login`
+          window.location.href=`http://${window.location.hostname}/login`
         } else if(status===200) {
           tempNewCard.unshift(response)
           setNewCard(tempNewCard)
-          window.location.href=`http://${window.location.hostname}:8000/`
+          window.location.href=`http://${window.location.hostname}/`
         }
       })
       questionAreaRef.current.value = ''

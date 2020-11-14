@@ -4,7 +4,7 @@ function lookup(method, url, data, callback) {
     const xhr = new XMLHttpRequest()
     const jsonData = JSON.stringify(data)
     xhr.responseType = "json"
-    xhr.open(method,`http://${window.location.hostname}:8000/api${url}`)
+    xhr.open(method,`http://${window.location.hostname}/api${url}`)
     const csrftoken = getCookie('csrftoken')
     if (method === "POST" || method === "DELETE"){
       xhr.setRequestHeader("Content-Type", "application/json")

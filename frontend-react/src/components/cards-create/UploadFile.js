@@ -15,7 +15,7 @@ function UploadFile(props) {
       formData.append("lecture", lectureRef.current.value)
       const xhr = new XMLHttpRequest()
       const method = "POST"
-      const url = `http://${window.location.hostname}:8000/api/cards/upload/`
+      const url = `http://${window.location.hostname}/api/cards/upload/`
       xhr.open(method, url)
       // xhr.setRequestHeader("Content-Type", "application/json")
       // xhr.setRequestHeader("HTTP_X_REQUESTED_WITH", "XMLHttpRequest")
@@ -23,9 +23,9 @@ function UploadFile(props) {
       xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'))
       xhr.onload = () => {
         if(xhr.status === 200){
-          window.location.href = `http://${window.location.hostname}:8000/`
+          window.location.href = `http://${window.location.hostname}/`
         } else if(xhr.status === 403){
-          window.location.href = `http://${window.location.hostname}:8000/login`
+          window.location.href = `http://${window.location.hostname}/login`
         }
       }
       xhr.send(formData)
