@@ -37,7 +37,6 @@ function CardForm(props) {
         } else if(status===200) {
           tempNewCard.unshift(response)
           setNewCard(tempNewCard)
-          window.location.href=`http://${window.location.hostname}/`
         }
       })
       questionAreaRef.current.value = ''
