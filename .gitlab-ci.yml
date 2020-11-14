@@ -1,0 +1,3 @@
+build:
+  script:
+    - scp -r "${PWD}" gitlab-publish-bot@hader:~
