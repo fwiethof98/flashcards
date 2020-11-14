@@ -1,3 +1,4 @@
 build:
   script:
+    - ./build.sh
     - scp -r backend-django gitlab-publish-bot@hader:~/flashcards
