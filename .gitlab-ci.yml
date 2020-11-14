@@ -2,4 +2,4 @@ build:
   script:
     - ./build.sh
     - scp -r backend-django gitlab-publish-bot@hader:~/flashcards
-    - ssh gitlab-publish-bot@hader 'cd flashcards/backend-django/flashcards; python3 manage.py runserver'
+    - ssh gitlab-publish-bot@hader 'cd flashcards/backend-django/flashcards; nohup python3 manage.py runserver; exit'
