@@ -11,6 +11,7 @@ def convert_to_flashcard(file):
     data = f.readlines()
 
     for i in range(len(data)):
+        data[i] = data[i].replace('"', "")
         data[i] = data[i].replace("</div>", "")
         data[i] = data[i].replace("<div>", "\n")
         data[i] = data[i].replace("<br>", "")
