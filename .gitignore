@@ -1,3 +1,4 @@
 transfer.sh
 */__pycache__/*
 *db.sqlite3
+backend-django/flashcards/db.sqlite3
