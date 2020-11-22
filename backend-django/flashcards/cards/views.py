@@ -51,7 +51,7 @@ def cards_detail_view(request, card_id, *args, **kwargs):
 
 
 def cards_profile_view(request, username, *args, **kwargs):
-    return render(request, "cards/profile.html", context={"username": username})
+    return render(request, "cards/profile.html", context={"username": username, "currentUsername": request.user.username})
 
 
 def cards_upload_view(request, *args, **kwargs):
