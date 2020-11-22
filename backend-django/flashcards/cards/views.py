@@ -39,12 +39,9 @@ def cards_create_view(request, *args, **kwargs):
 
 def cards_list_view(request, *args, **kwargs):
     id = request.GET.get("id")
-    context = {}
-    if edit != None and id != None:
-        context = {
-            "edit": edit,
-            "id": id
-        }
+    context = {
+        "id": id
+    }
     return render(request, "cards/list.html", context=context)
 
 
@@ -62,8 +59,8 @@ def cards_upload_view(request, *args, **kwargs):
 
 # API VIEWS
 
-@api_view(['POST'])
-@permission_classes([IsAuthenticated])
+@ api_view(['POST'])
+@ permission_classes([IsAuthenticated])
 def card_upload_api_view(request, *args, **kwargs):
     uploaded_file = request.FILES['file']
     fs = FileSystemStorage()

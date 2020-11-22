@@ -25,7 +25,7 @@ function CardList(props) {
     return (
       <div style={{marginTop: 50}}>
         {cards && cards.map((card, index) => {
-          return <div key={index} className="container"><Card card={card} key={card.id} username={currentUser} create={true} />
+          return <div key={index} className="container"><Card card={card} key={card.id} username={currentUser} create={false} />
           </div>
         })}
         

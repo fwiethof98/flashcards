@@ -40,7 +40,7 @@ from cards.views import (
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('manage/', manage_view),
-    path('create/', cards_list_view),
+    path('cards/list/', cards_list_view),
     path('login/', login_view),
     path('logout/', logout_view),
     path('register/', register_view),
