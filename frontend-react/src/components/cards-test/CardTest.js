@@ -31,7 +31,7 @@ function CardTest(props) {
     }
   
     return <div className="container">
-        {status === 200 ? <div><Card card={cardEl}/> 
+        {status === 200 ? <div><Card card={cardEl} create={false} /> 
         <button className="mx-1 btn btn-secondary mb-1" onClick={handleNextClick}>Next</button></div>
         : <h2 className="my-4">No cards available for this topic.</h2>}
         
