@@ -39,6 +39,8 @@ function CardForm(props) {
       })
       questionAreaRef.current.value = ''
       answerAreaRef.current.value = ''
+      setQuestion([])
+      setAnswer([])
     }
 
     const handleQuestionChange = () => {
