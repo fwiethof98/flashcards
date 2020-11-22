@@ -40,7 +40,8 @@ def cards_create_view(request, *args, **kwargs):
 def cards_list_view(request, *args, **kwargs):
     id = request.GET.get("id")
     context = {
-        "id": id
+        "id": id,
+        "username": request.user.username
     }
     return render(request, "cards/list.html", context=context)
 
