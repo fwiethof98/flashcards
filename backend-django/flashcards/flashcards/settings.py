@@ -50,7 +50,8 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'cards',
-    'accounts'
+    'accounts',
+    'lectures'
 ]
 
 MIDDLEWARE = [
@@ -100,18 +101,18 @@ DATABASES = {
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
+    # {
+    #     'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+    # },
+    # {
+    #     # 'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+    # },
+    # {
+    #     'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+    # },
+    # {
+    #     'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+    # },
 ]
 
 
@@ -155,9 +156,9 @@ if DEBUG:
     DEFAULT_RENDERER_CLASSES += [
         'rest_framework.renderers.BrowsableAPIRenderer'
     ]
-    # DEFAULT_AUTHENTICATION_CLASSES += [
-    #     'flashcards.rest_api.dev.DevAuthentication'
-    # ]
+    DEFAULT_AUTHENTICATION_CLASSES += [
+        'flashcards.rest_api.dev.DevAuthentication'
+    ]
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': DEFAULT_AUTHENTICATION_CLASSES
@@ -165,3 +166,5 @@ REST_FRAMEWORK = {
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = "/media/"
+
+AUTH_PROFILE_MODULE = 'flashcards.UserProfile'

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 
 function LectureSelect(props) {
     const {reference, handleChange, className, lecture} = props
@@ -13,7 +13,7 @@ function LectureSelect(props) {
       return <option key={index} value={item.long}>{item.long}</option>
     })
     return <div>
-      <select ref={reference} defaultValue={lecture} onChange={handleChange} className={className}>
+      <select ref={reference} defaultValue={lecture} onChange={handleChange} className={className} style={{height:40, padding:5}}>
         {options}
       </select>
     </div>

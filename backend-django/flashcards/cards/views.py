@@ -1,8 +1,5 @@
-from django.shortcuts import redirect, render
-from django.http import HttpResponse, Http404, JsonResponse
-from rest_framework import serializers
-from .form import CardForm
-from django.utils.http import is_safe_url
+from django.shortcuts import render
+from django.http import JsonResponse
 from django.conf import settings
 from .serializers import CardSerializer, CardActionSerializer
 from rest_framework.response import Response
@@ -28,8 +25,19 @@ def cards_test_view(request, *args, **kwargs):
     return render(request, "cards/test.html", context={"card_id": card_id, "lecture": lecture})
 
 
-def cards_list_view(request, *args, **kwargs):
+def cards_create_view(request, *args, **kwargs):
     edit = request.GET.get("edit")
+    id = request.GET.get("id")
+    context = {}
+    if edit != None and id != None:
+        context = {
+            "edit": edit,
+            "id": id
+        }
+    return render(request, "cards/card_form.html", context=context)
+
+
+def cards_list_view(request, *args, **kwargs):
     id = request.GET.get("id")
     context = {}
     if edit != None and id != None:

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import LectureSelect from '../data-select/LectureSelect'
 import getCookie from '../../functions/backend-lookup/getCookie'
 

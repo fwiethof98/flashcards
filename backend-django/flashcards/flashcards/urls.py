@@ -24,7 +24,8 @@ from django.urls import include
 from accounts.views import (
     login_view,
     logout_view,
-    register_view
+    register_view,
+    manage_view
 )
 
 from cards.views import (
@@ -32,12 +33,14 @@ from cards.views import (
     cards_detail_view,
     cards_profile_view,
     cards_test_view,
-    cards_upload_view
+    cards_upload_view,
+    cards_create_view
 )
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', cards_list_view),
+    path('manage/', manage_view),
+    path('create/', cards_list_view),
     path('login/', login_view),
     path('logout/', logout_view),
     path('register/', register_view),
@@ -45,7 +48,10 @@ urlpatterns = [
     path('cards/<str:username>', cards_profile_view),
     path('test/', cards_test_view),
     path('upload/', cards_upload_view),
+    path('', cards_create_view),
     path('api/cards/', include('cards.urls')),
+    path('api/auth/', include('accounts.urls')),
+    path('api/lec/', include('lectures.urls'))
 ]
 
 if settings.DEBUG:

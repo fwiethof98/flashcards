@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+from django.db.models.fields.related import ManyToManyField
 
 User = settings.AUTH_USER_MODEL
 
@@ -21,11 +22,4 @@ class Card(models.Model):
 
     class Meta:
         ordering = ["-id"]
-
-    def serialize(self):
-        return {
-            "id": self.id,
-            "question": self.question,
-            "answer": self.answer
-        }
 # Create your models here.

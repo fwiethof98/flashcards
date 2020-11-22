@@ -1,11 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import Card from './Card'
 import lookup from '../../functions/backend-lookup/djangoLookup'
 
 function CardList(props) {
-    const [cards, setCards] = useState([])
-    const [cardsInit, setCardsInit] = useState([])
-    const {username, card_id} = props
+    const [cards, setCards] = useState(false)
+    const {username, card_id, currentUser} = props
     
     let url = "/cards/list/"
   
@@ -15,24 +14,18 @@ function CardList(props) {
       url = "/cards/" + card_id
     }
   
-    useEffect(() =>{
-      let final = [...props.newCards].concat(cardsInit)
-      if (final.length !== cards.length) {
-        setCards(final)
-      }
-    }, [props.newCards, cards, cardsInit])
-    useEffect(() => {
+    if(!cards){
       const callback = (response, status) => {
-        setCardsInit(response)
+        setCards(response)
       }
       lookup("GET", url, {}, callback)
-    }, [url])
+    }
   
   
     return (
       <div style={{marginTop: 50}}>
-        {cards.map((card, index) => {
-          return <div key={index} className="container"><Card card={card} key={card.id} />
+        {cards && cards.map((card, index) => {
+          return <div key={index} className="container"><Card card={card} key={card.id} username={currentUser} create={true} />
           </div>
         })}
         

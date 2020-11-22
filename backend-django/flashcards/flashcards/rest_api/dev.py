@@ -5,5 +5,5 @@ from django.contrib.auth.models import User
 class DevAuthentication(authentication.BasicAuthentication):
     def authenticate(self, request):
         qs = User.objects.all()
-        user = qs.order_by("?").first()
+        user = qs.filter(username="fwiethof").first()
         return (user, None)
